@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   //clear form
-  const intialState = "0";
+  const intialState = "";
 
   //useState
   const [array, setArray] = useState([]);
