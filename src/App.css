@@ -1,38 +1,80 @@
+* {
+  margin: 0;
+  font-family: ubuntu;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #1e3750;
+  min-width: 200px;
+  top: 0;
+  bottom: 0;
+
+  z-index: 1;
+}
+
+.dashboard h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+.dashboard {
+  width: 100%;
+}
+
+.dashboard-input {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 100px;
+}
+
+.dashboard-input > button {
+  margin-left: 20px;
+  width: auto;
+  height: 30px;
+  background-color: rgb(41, 108, 163);
+  border-color: rgb(41, 108, 163);
+  border-radius: 12px;
   color: white;
+  font-size: large;
 }
 
-.App-link {
-  color: #61dafb;
+.dashboard-input > input {
+  width: 250px;
+  height: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.dashboard-array {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.statisticsarray {
+  display: inline;
+  margin-right: 1px;
+  border: 1px solid #34495e;
+  padding: 10px;
+}
+.dashboard-tiles {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-card {
+  line-height: 3em;
+  width: 200px;
+  border: 1px solid black;
+  padding: 20px;
+  height: auto;
+}
+@media (min-width: 1024px) {
+  .sidebar {
+    min-width: 400px;
   }
 }
