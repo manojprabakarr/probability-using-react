@@ -10,7 +10,7 @@ function App() {
   const [numbers, setNumber] = useState(intialState);
   const [probabilityMean, setprobabilityMean] = useState("");
   const [probabilityMedian, setprobabilityMedian] = useState("");
-  const [probabilityMode, setprobabilityMode] = useState([]);
+  const [probabilityMode, setprobabilityMode] = useState("");
   const [probabilitySd, setProbabilitySd] = useState("");
 
   //Randomvalues
@@ -68,15 +68,22 @@ function App() {
 
   function Mode() {
     var count = 0;
+    var modes = [];
+    var moded;
+
     for (let i = 0; i < array.length; i++) {
       for (var j = 0; j < i; j++) {
         if (array[j] === array[i]) {
-          probabilityMode.push(array[j]);
+          modes.push(array[j]);
 
           count++;
         }
       }
     }
+    moded = [...new Set(modes)];
+
+    setprobabilityMode(moded.toString());
+    console.log(probabilityMode);
   }
 
   function standardDeviation() {
@@ -125,13 +132,8 @@ function App() {
             <p>mean:{probabilityMean}</p>
             <p> median:{probabilityMedian}</p>
             <p>Standarddeviation:{probabilitySd}</p>
-            {probabilityMode.length === 0 ? (
-              <p>mode:norepeatations</p>
-            ) : (
-              probabilityMode?.map((repeat) => (
-                <p key={repeat.id}>mode:{repeat}</p>
-              ))
-            )}
+
+            <p>Mode:{probabilityMode}</p>
           </div>
         </div>
       </div>
